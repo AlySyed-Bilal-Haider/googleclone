@@ -8,8 +8,6 @@ export const StateContextProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const getResults = async (url) => {
-
-
     const res = await fetch(`${baseUrl}${url}`, {
       method: 'GET',
       headers: {
@@ -21,7 +19,7 @@ export const StateContextProvider = ({ children }) => {
     const data = await res.json();
     setResults(data);
   };
-console.log("results:",results);
+
   return (
     <StateContext.Provider value={{ getResults, results, searchTerm, setSearchTerm }}>
       {children}
@@ -29,4 +27,4 @@ console.log("results:",results);
   );
 };
 
-
+export const useStateContext = () => useContext(StateContext);

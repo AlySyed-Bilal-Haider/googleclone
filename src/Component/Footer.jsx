@@ -9,8 +9,8 @@ import {
   } from "@mui/material";
 function Footer() {
   return (
-   <Box sx={{p:2,position:'absolute',bottom:'0px',textAlign:'center'}}>
- <Typography sx={{color:'black'}}> © 2022 Google, Inc.</Typography>
+   <Box sx={{position:'fixed',bottom:'0px',width:"100%"}}>
+ <Typography sx={{color:'black',textAlign:'center'}}> © 2022 Google, Inc.</Typography>
    </Box>
   )
 }
