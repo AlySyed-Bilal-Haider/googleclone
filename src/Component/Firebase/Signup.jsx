@@ -5,10 +5,10 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import {app} from './Firebase';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { TextField, Button, Box, Typography } from "@mui/material";
 function Signup() {
-    const navigate=useNavigate();
+    // const navigate=useNavigate();
   const [formvalues, setformvalues] = useState({
     email: "",
     password: "",
@@ -31,11 +31,11 @@ function Signup() {
       const errorMessage = error.message;
       console.log("errorMessage", errorMessage);
     }
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/");
-      }
-    });
+    // onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     navigate("/");
+    //   }
+    // });
     setformvalues({
       name: "",
       email: "",
@@ -46,11 +46,10 @@ function Signup() {
       sx={{
         width: "100%",
         py: 2,
-        mt:{md:82,xs:6},
+        mt:{md:8,xs:6},
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
-        flexDirection: { md: "row", xs: "column" },
+        alignItems: "center"
       }}
     >
       <form

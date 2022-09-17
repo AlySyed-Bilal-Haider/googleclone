@@ -6,10 +6,7 @@ const links = [
   { url: "/videos", text: "📺 Videos" },
   { url: "/images", text: "📸 Images" },
   { url: "/signup", text: "sing up" },
-  {
-    url: "/login",
-    text: "Log in",
-  },
+  { url: "/login",text: "Log in"},
 ];
 function Links() {
   return (
@@ -30,8 +27,9 @@ function Links() {
           width: { md: "30%", xs: "100%" },
         }}
       >
-        {links.map(({ url, text }) => (
+        {links.map(({ url, text },index) => (
           <Link
+           key={index}
             to={url}
             style={{
               padding: "8px",
