@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useStateContext } from "../Context/ContextAPI";
-import { Box, Avatar } from "@mui/material";
+import { Box, Avatar, Typography } from "@mui/material";
 import logo from "../assests/logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import AppsIcon from "@mui/icons-material/Apps";
@@ -44,11 +44,17 @@ function Navbar() {
             mr: 8,
           }}
         >
+          <Box sx={{display:"flex",alignItems:'center',flexDirection:'column'}}>
           <img
             src={logo}
             alt="Google clone"
             style={{ width: "120px", height: "55px", marginRight: "10px" }}
           />
+          <Typography>
+          <strong> Clone</strong><br/>
+          Bilal Haider
+          </Typography>
+          </Box>
           <Box
             sx={{
               width: { md: "48%", xs: "80%" },
@@ -57,6 +63,7 @@ function Navbar() {
               alignItems: "center",
               border: "1px solid black",
               borderRadius: "4px",
+              ml:{md:2,xs:1}
             }}
           >
             <input
@@ -107,8 +114,10 @@ function Navbar() {
           display: { md: "none", xs: "flex" },
           justifyContent: "center",
           alignItems: "center",
-          border: "1px solid black",
+          // border: "1px solid black",
+          boxShadow:"5px 5px 5px lightgray",
           borderRadius: "4px",
+          padding:"5px"
         }}
       >
         <input
@@ -116,7 +125,7 @@ function Navbar() {
           onChange={(e) => setText(e.target.value)}
           type="text"
           placeholder="search"
-          style={{ width: "100%", border: "none", outline: "none" }}
+          style={{ width: "100%", border: "none", outline: "none",padding:'5px' }}
         />
         <SearchIcon
           style={{

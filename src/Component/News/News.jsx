@@ -25,14 +25,15 @@ function News({ results }) {
       {results?.results?.map(({ link, title }, index) => {
         return (
           <>
-            <Link to={link} target="_blank" rel="noreferrer">
-              <Typography sx={{ fontSize: "12px",color:"#878A8D" }}>
+            <Link to={link} target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+              <Typography sx={{ fontSize: "12px",color:"#878A8D",textDecoration:'none' }}>
                 {link.length > 30 ? link.substring(0, 30) : link}
               </Typography>
               <Typography style={{
                 fontSize:"16px",
                 color:"blue",
-                fontWeight:"bold"
+                fontWeight:"bold",
+                textDecoration:"none"
               }}>{title}</Typography>
             </Link>
           </>

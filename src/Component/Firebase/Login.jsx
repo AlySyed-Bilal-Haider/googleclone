@@ -36,11 +36,11 @@ function Login() {
   }
  
   // this is use for sign In checkActionCode, if user signin already, then navigate another page.
-//   onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//       navigate('/');
-//     }
-//   });
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     navigate('/');
+  //   }
+  // });
   return (
     <Box
     sx={{
@@ -52,11 +52,18 @@ function Login() {
        
     }}
   >
-    <form onSubmit={loginhandler} style={{width:matches?'90%':'35%',padding:"15px 0px",
+    <form onSubmit={loginhandler} style={{
+      borderRadius:'4px',
+      width:matches?'90%':'35%',
+      display: "flex",
+      justifyContent: "space-around",
+      alignItems: "center",
+      flexDirection: "column",
+    padding:"30px 0px",
      boxShadow:'5px 5px 5px lightgray,-5px -5px 5px lightgray'}}>
     <Typography sx={{fontWeight:"bold",py:1,textAlign:'center',fontSize:"18px"}}>Log in Form</Typography><br/>
     <TextField
-        sx={{ width: { md: "98%", xs: "95%" }, margin: "5px" }}
+        sx={{ width:"95%", margin: "5px",borderRadius:"4px"  }}
         type="email"
         name="email"
         value={Infostate.email}
@@ -67,7 +74,7 @@ function Login() {
       <TextField
         name="password"
         value={Infostate.password}
-        sx={{ width: { md: "98%", xs: "95%" }, margin: "5px" }}
+        sx={{ width:"95%", margin: "5px",borderRadius:"4px"  }}
         type="password"
         placeholder="password"
         variant="outlined"
@@ -78,7 +85,7 @@ function Login() {
         type="submit"
         variant="contained"
         color="primary"
-        sx={{ width: { md: "98%", xs: "95%" },ml:1,mt:1 }}
+        sx={{ width: "95%",ml:1,mt:1 ,borderRadius:"4px" }}
       >
         Login
       </Button>
