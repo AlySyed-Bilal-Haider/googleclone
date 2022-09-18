@@ -48,18 +48,19 @@ function Login() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-     mt:{md:12,xs:6}
-
+     mt:{md:12,xs:6},
+       
     }}
   >
-    <form onSubmit={loginhandler} style={{width:matches?'90%':'35%'}}>
-    <Typography sx={{fontWeight:"bold",py:2,textAlign:'center'}}>Log up Form</Typography><br/>
+    <form onSubmit={loginhandler} style={{width:matches?'90%':'35%',padding:"15px 0px",
+     boxShadow:'5px 5px 5px lightgray,-5px -5px 5px lightgray'}}>
+    <Typography sx={{fontWeight:"bold",py:1,textAlign:'center',fontSize:"18px"}}>Log in Form</Typography><br/>
     <TextField
         sx={{ width: { md: "98%", xs: "95%" }, margin: "5px" }}
         type="email"
         name="email"
         value={Infostate.email}
-        label="Email"
+        placeholder="Email"
         variant="outlined"
         onChange={formHandle}
       /><br/>
@@ -68,7 +69,7 @@ function Login() {
         value={Infostate.password}
         sx={{ width: { md: "98%", xs: "95%" }, margin: "5px" }}
         type="password"
-        label="password"
+        placeholder="password"
         variant="outlined"
         onChange={formHandle}
       />

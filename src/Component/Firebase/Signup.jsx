@@ -6,9 +6,10 @@ import {
 } from "firebase/auth";
 import {app} from './Firebase';
 // import { useNavigate } from "react-router-dom";
-import { TextField, Button, Box, Typography } from "@mui/material";
+import { TextField, Button, Box, Typography,useMediaQuery } from "@mui/material";
 function Signup() {
     // const navigate=useNavigate();
+    const matches = useMediaQuery('(max-width:700px)');
   const [formvalues, setformvalues] = useState({
     email: "",
     password: "",
@@ -53,23 +54,26 @@ function Signup() {
       }}
     >
       <form
+      autoComplete="off"
         onSubmit={Formhandler}
         style={{
-          width: "60%",
+          width: matches?"90%":"35%",
           padding: "5px 0px 5px 0px",
           display: "flex",
           justifyContent: "space-around",
           alignItems: "center",
-          flexDirection:"column"
+          flexDirection:"column",
+          padding:"15px 0px",
+     boxShadow:'5px 5px 5px lightgray,-5px -5px 5px lightgray'
         }}
       >
-        <Typography sx={{fontWeight:"bold",py:2,textAlign:'center'}}>Sign up Form</Typography><br/>
+        <Typography sx={{fontWeight:"bold",py:1,textAlign:'center',fontSize:"18px"}}>Sign up Form</Typography><br/>
         <TextField
-          sx={{ width: { md: "50%", xs: "95%" } }}
+          sx={{ width: { md: "98%", xs: "95%" } }}
           type="email"
           name="email"
           value={formvalues.email}
-          label="Email"
+          placeholder="Email"
           variant="outlined"
           onChange={(e)=>{
             setformvalues({...formvalues,email:e.target.value});
@@ -77,11 +81,11 @@ function Signup() {
         />
         <br />
         <TextField
-          sx={{ width: { md: "50%", xs: "95%" } }}
+          sx={{ width: { md: "98%", xs: "95%" } }}
           type="password"
           value={formvalues.password}
           name="password"
-          label="password"
+          placeholder="password"
           variant="outlined"
           onChange={(e)=>{
             setformvalues({...formvalues,password:e.target.value});
@@ -92,7 +96,7 @@ function Signup() {
           type="submit"
           variant="contained"
           color="primary"
-          sx={{ width: { md: "50%", xs: "95%" } }}
+          sx={{ width: { md: "98%", xs: "95%" } }}
         >
           save
         </Button>
